@@ -50,9 +50,9 @@ class AccessibilityLibraryServiceProvider extends ServiceProvider
      */
     private function registerComponents(): self
     {
-        Blade::componentNamespace('TomSix\\Components\\View\\Components\\Form', config('library.prefix.form'));
+        Blade::componentNamespace('ThibaultOttevaere\Components\\View\\Components\\Form', config('library.prefix.form'));
 
-        Blade::componentNamespace('TomSix\\Components\\View\\Components\\Navigation', config('library.prefix.navigation'));
+        Blade::componentNamespace('ThibaultOttevaere\Components\\View\\Components\\Navigation', config('library.prefix.navigation'));
 
         return $this;
     }
