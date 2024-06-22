@@ -1,0 +1,1 @@
+<a aria-roledescription="link" aria-label={{$label}} class={{$style}} href={{$navLink}} target={{$target}}>{{$text}}</a>

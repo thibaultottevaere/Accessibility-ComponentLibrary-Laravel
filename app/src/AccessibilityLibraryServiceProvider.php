@@ -26,7 +26,7 @@ class AccessibilityLibraryServiceProvider extends ServiceProvider
             ], 'config');
         }
 
-        $this->loadViewsFrom(self::PATH_VIEWS, 'laravel-components-library');
+        $this->loadViewsFrom(self::PATH_VIEWS, 'componentlibrary');
 
         $this
             ->registerComponents()
@@ -50,9 +50,9 @@ class AccessibilityLibraryServiceProvider extends ServiceProvider
      */
     private function registerComponents(): self
     {
-        Blade::componentNamespace('ThibaultOttevaere\Components\\View\\Components\\Form', config('library.prefix.form'));
+        Blade::componentNamespace('ThibaultOttevaere\\Components\\View\\Components\\Form', config('library.prefix.form'));
 
-        Blade::componentNamespace('ThibaultOttevaere\Components\\View\\Components\\Navigation', config('library.prefix.navigation'));
+        Blade::componentNamespace('ThibaultOttevaere\\Components\\View\\Components\\Navigation', config('library.prefix.navigation'));
 
         return $this;
     }
@@ -65,15 +65,15 @@ class AccessibilityLibraryServiceProvider extends ServiceProvider
     public function registerComponentsPublishers(): self
     {
         $this->publishes([
-            self::PATH_VIEWS => resource_path('views/vendor/laravel-components-library'),
+            self::PATH_VIEWS => resource_path('views/vendor/componentlibrary'),
         ], 'components');
 
         $this->publishes([
-            self::PATH_VIEWS . '/form' => resource_path('views/vendor/laravel-components-library/form'),
+            self::PATH_VIEWS . '/form' => resource_path('views/vendor/componentlibrary/form'),
         ], 'form-components');
 
         $this->publishes([
-            self::PATH_VIEWS . '/navigation' => resource_path('views/vendor/laravel-components-library/navigation'),
+            self::PATH_VIEWS . '/navigation' => resource_path('views/vendor/componentlibrary/navigation'),
         ], 'navigation-components');
 
         return $this;
